@@ -1,0 +1,28 @@
+CREATE DATABASE Production_Tracking_System;
+USE Production_Tracking_System;
+CREATE TABLE Lot (
+    LotNumber INT PRIMARY KEY,
+    CreationDate DATE NOT NULL,
+    CostOfMaterials DECIMAL(10,2)
+);
+CREATE TABLE ProductionUnit (
+    SerialNumber INT PRIMARY KEY,
+    UnitWeight DECIMAL(8,2),
+    ProductType VARCHAR(30),
+    QualityStatus VARCHAR(20),
+    LotNumber INT NOT NULL,
+    
+);
+CREATE TABLE RawMaterial (
+    MaterialID INT PRIMARY KEY,
+    Name VARCHAR(60) NOT NULL,
+    UnitCost DECIMAL(8,2),
+    Type VARCHAR(40)
+);
+ CREATE TABLE ProductionMaterial (
+    SerialNumber INT,
+    MaterialID INT,
+    QuantityUsed DECIMAL(8,2),
+);
+
+
