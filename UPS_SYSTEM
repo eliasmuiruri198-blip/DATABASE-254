@@ -1,0 +1,22 @@
+CREATE DATABASE UPS _System;
+USE UPS_System;
+CREATE TABLE RetailCenter (
+    CenterID INT PRIMARY KEY,
+    Type VARCHAR(40) NOT NULL,
+    Address VARCHAR(70) NOT NULL
+);
+CREATE TABLE ShippedItem (
+    ItemNumber INT PRIMARY KEY,
+    Weight INT NOT NULL DEFAULT 100,
+    Dimensions VARCHAR(30),
+    InsuranceAmount INT NOT NULL DEFAULT 1000,
+    Destination VARCHAR(30) NOT NULL,
+    FinalDeliveryDate DATE,
+);
+CREATE TABLE TransportationEvent (
+    ScheduleNumber INT PRIMARY KEY,
+    Type VARCHAR(25) NOT NULL,  
+    DeliveryRoute VARCHAR(60) NOT NULL,    
+);
+
+
